@@ -25,7 +25,7 @@ public class EmployeeController {
 	@GetMapping("/employee")
 	public String viewHomePage(Model model) {
 		model.addAttribute("listEmployees", employeeService.getAllEmployees());
-		return "index";
+		return "employee-list";
 	}
 	
 	@GetMapping("/showNewEmployeeForm")
@@ -38,7 +38,7 @@ public class EmployeeController {
 	@PostMapping("/saveEmployee")
 	public String saveEmployee(@ModelAttribute("employee") Employee employee) {
 		employeeService.saveEmployee(employee);
-		return "redirect:/";
+		return "redirect:/employee";
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")

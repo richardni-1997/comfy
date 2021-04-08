@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity(name = "orderdetail")
 
 @Entity
 @Table(name = "orderdetail")
@@ -33,7 +32,7 @@ public class OrderDetail {
 	private Date date;
 	
 	@Column(name = "time")
-	private Time time;
+	private String time;
 	
 	@Column(name = "employeeid")
 	private int employeeid;
@@ -81,11 +80,11 @@ public class OrderDetail {
 		this.date = date;
 	}
 
-	public Time getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(Time time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
