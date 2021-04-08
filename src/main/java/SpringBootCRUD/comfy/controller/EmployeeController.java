@@ -18,6 +18,11 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 	
 	@GetMapping("/")
+	public String viewHome() {
+		return "Welcome";
+	}
+	
+	@GetMapping("/employee")
 	public String viewHomePage(Model model) {
 		model.addAttribute("listEmployees", employeeService.getAllEmployees());
 		return "index";

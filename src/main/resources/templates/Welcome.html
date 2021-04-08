@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Premo Pizza Website</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="container my-2">
+		<h1>
+			Welcome Page <a th:href="@{/menu}"
+				class="btn btn-primary btn-sm mb-3">Menu</a> <a
+				th:href="@{/order}"
+				class="btn btn-primary btn-sm mb-3">Orders</a> <a
+				th:href="@{/customer}"
+				class="btn btn-primary btn-sm mb-3">Customers</a> <a
+				th:href="@{/employee}"
+				class="btn btn-primary btn-sm mb-3">Employee List</a>
+		</h1>
+	</div>
+	
+	<h1 style="text-align:center;">Welcome to Premo Pizza, to navigate 
+	the site press any button at the top!
+	</h1>
+	
+</body>
+</html>
