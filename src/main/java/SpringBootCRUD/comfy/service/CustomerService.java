@@ -7,5 +7,6 @@ import SpringBootCRUD.comfy.model.Customer;
 public interface CustomerService {
 	List <Customer> getAllCustomers();
 	void saveCustomer(Customer customer);
-	void deleteCustomerById(long id);
+	Customer getCustomerById(long id);
+//	void deleteCustomerById(long id);
 }
