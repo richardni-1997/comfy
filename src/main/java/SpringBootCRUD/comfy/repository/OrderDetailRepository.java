@@ -18,4 +18,7 @@ public interface OrderDetailRepository extends JpaRepository<OrderDetail, Long> 
 //			+ "ORDER BY DATE_PART('week', date);")
 //	List <OrderDetail> get();
 	
+	@Query("select o from OrderDetail o where o.id = 1")
+	List<OrderDetail> findOrderById(long id);
+	
 }

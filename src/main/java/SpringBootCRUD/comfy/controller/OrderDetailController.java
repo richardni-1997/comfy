@@ -1,12 +1,16 @@
 package SpringBootCRUD.comfy.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
+//import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 import SpringBootCRUD.comfy.model.OrderDetail;
 import SpringBootCRUD.comfy.service.OrderDetailService;
@@ -34,6 +38,15 @@ public class OrderDetailController {
 		OrderDetail orderDetail = new OrderDetail();
 		model.addAttribute("orderdetail", orderDetail);
 		return "new_order";
+	}
+	
+	@GetMapping("/showOrderQuery/{id}")
+	public String findOrderById(@PathVariable(value = "id") long id, Model model) {
+		
+		var orders = (List<OrderDetail>) orderDetailService.findOrderById(id);
+		
+		model.addAttribute("listOrders", orders);
+		return "order-list";
 	}
 	
 	
