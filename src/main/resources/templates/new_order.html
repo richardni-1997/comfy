@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Order History</title>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Order History</h1>
+		<hr>
+		<h2>Save Order</h2>
+		
+		<form action="#" th:action="@{/saveOrder}" th:object="${orderdetail}"
+	method="POST">
+			<label>Ordered Products</label>
+			<input type="text" th:field="*{products}" placeholder="Ordered Products"
+			class="form-control mb-4 col-4">
+			
+			<label>Price charged</label>
+			<input type="number" step=0.01 min=0 th:field="*{total_cost}" placeholder="Price charged"
+			class="form-control mb-4 col-4">
+			
+						
+			<label>Amount sold</label>
+			<input type="number" th:field="*{quantity}" placeholder="Amount sold"
+			class="form-control mb-4 col-4">
+			
+			<label>Date</label>
+			<input type="date" th:field="*{date}" placeholder="Date (yyyy-mm-dd format)"
+			class="form-control mb-4 col-4">
+			
+			<label>Time</label>
+			<input type="time" th:field="*{time}" placeholder="Time"
+			class="form-control mb-4 col-4">
+			
+			<label>Employee ID</label>
+			<input type="number" th:field="*{employeeid}" placeholder="Employee ID"
+			class="form-control mb-4 col-4">
+			
+			<label>Customer ID</label>
+			<input type="number" th:field="*{customerid}" placeholder="Customer ID"
+			class="form-control mb-4 col-4">
+			
+			<button type="submit" class="btn btn-info col-2">Save Order</button>
+	</form>
+	
+	<hr>
+	
+	<a th:href="@{/order}">Back to Orders List</a>
+	</div>
+</body>
+</html>
